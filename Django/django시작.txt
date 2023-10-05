@@ -1,0 +1,18 @@
+JAVA-Spring     Python-Django
+
+      M                     Model (models.py 파일 - DB 설계)
+      V                       Template (.html 파일 - 사용자에게 보여지는 화면)
+      C                       View (views.py 파일 - 두뇌)
+
+
+- 생성 명령: python manage.py makemigrations
+- 적용 명령: python manage.py migrate
+
+python manage.py runserver 0:80            (http)
+python manage.py runserver 0:8080         (8080은 테스트 용도로 많이 사용하는 포트)
+python manage.py runserver 127.0.0.1:80   (입력 안해도 자동으로 입력되는 ip, port)
+python manage.py runserver 0.0.0.0:80
+
+python manage.py startapp
+
+python manage.py createsuperuser
