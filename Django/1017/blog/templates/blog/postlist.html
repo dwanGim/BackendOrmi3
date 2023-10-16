@@ -1,0 +1,10 @@
+{% comment %} # 템플릿 변수 {{ 변수 }}
+# 템플릿 필터 {{ 변수|필요작업 }}
+blog > templates > blog > postlist.html {% endcomment %}
+
+{% for i in posts %}
+    <p>{{i.id}}</p>
+    <p>{{i.title}}</p>
+    <p>{{i.content|upper}}</p>
+    <hr>
+{% endfor %}
