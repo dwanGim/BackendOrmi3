@@ -1,6 +1,5 @@
 # 1005 version
 # 동적 url, template tag
-
 파이썬 설치
 폴더 생성
 VSC를 이 폴더 기준으로 열었습니다.
