@@ -1,9 +1,11 @@
-from django.db import models
-from django.conf import settings
+from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import Post
+from .serializers import PostSerializer
+from rest_framework.permissions import IsAuthenticated
+from .permissions import IsAuthorOrReadOnly
 
-class Post(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    title = models.CharField(max_length=100)
-    content = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+class PostViewSet(ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = [IsAuthenticated, IsAuthorOrReadOnly]
